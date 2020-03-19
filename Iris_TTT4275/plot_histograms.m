@@ -11,6 +11,11 @@ sw_bins = min(all_data(:,2)):0.1:max(all_data(:,2)); % sepal width
 pl_bins = min(all_data(:,3)):0.2:max(all_data(:,3)); % petal length
 pw_bins = min(all_data(:,4)):0.1:max(all_data(:,4)); % petal width
 
+bins    = 0:0.2:8;
+sl_bins = bins;
+sw_bins = bins;
+pl_bins = bins;
+pw_bins = bins;
 
 %% Plot histogram sepal length
 figure(1);
