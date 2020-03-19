@@ -15,7 +15,7 @@ Making histogram should be easy in Matlab. Plot in reasonable way (subplots?) an
 
 ## Task 2: MNist
 ### Part 1: whole training set
-
+Video on [the perceptron algorithm](https://www.youtube.com/watch?v=4Gac5I64LM4). 
 
 
 ### Part 2: clustering
