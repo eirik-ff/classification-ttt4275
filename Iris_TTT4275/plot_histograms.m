@@ -8,7 +8,7 @@ all_data = [class1; class2; class3];
 %% Defs
 sl_bins = min(all_data(:,1)):0.1:max(all_data(:,1)); % sepal length
 sw_bins = min(all_data(:,2)):0.1:max(all_data(:,2)); % sepal width
-pl_bins = min(all_data(:,3)):0.1:max(all_data(:,3)); % petal length
+pl_bins = min(all_data(:,3)):0.2:max(all_data(:,3)); % petal length
 pw_bins = min(all_data(:,4)):0.1:max(all_data(:,4)); % petal width
 
 
@@ -46,7 +46,6 @@ histogram(class3(:,3), pl_bins);
 
 xlabel('Petal length [cm]');
 ylabel('Count');
-
 
 
 subplot(414);
