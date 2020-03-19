@@ -19,5 +19,7 @@ Making histogram should be easy in Matlab. Plot in reasonable way (subplots?) an
 
 
 ### Part 2: clustering
+Nice [YouTube video](https://www.youtube.com/watch?v=4b5d3muPQmA) on clustering. 
 
+Nice [YouTube video](https://www.youtube.com/watch?v=HVXime0nQeI) on kNN. 
 
