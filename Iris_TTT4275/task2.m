@@ -3,6 +3,7 @@ class1 = load('class_1');  % Setosa
 class2 = load('class_2');  % Versicolour
 class3 = load('class_3');  % Virginica
 
+all_data = [class1; class2; class3];
 
 %% Definitions
 features = [1;2;3;4];
@@ -36,13 +37,6 @@ x2d = class2(idx_train,features);
 x3d = class3(idx_train,features);
 
 xd  = [x1d; x2d; x3d];
-
-scatter(all_data(:,3),all_data(:,4));
-% hold on;
-% scatter(x2d(:,3),x2d(:,4));
-% scatter(x3d(:,3),x3d(:,4));
-xlabel('Feature 3');
-ylabel('Feature 4');
 
 %% Testing data (t = test)
 x1t = class1(idx_test,features);
