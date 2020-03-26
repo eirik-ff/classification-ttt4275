@@ -56,6 +56,7 @@ t = [kron(ones(1,N_train),t1), kron(ones(1,N_train),t2), kron(ones(1,N_train),t3
 W = eye(C,D+1);
 cond = 1;
 iters = 0;
+disp('---- Begin training reduced feature set ----');
 tic;
 while cond
     grad_W_MSE = 0;
@@ -74,6 +75,8 @@ while cond
     W = W - alpha*grad_W_MSE;
 end
 toc
+disp('---- End training reduced feature set ----');
+
 
 %% Test
 known_test = [kron(ones(1,N_test),t1), kron(ones(1,N_test),t2), kron(ones(1,N_test),t3)];

@@ -53,6 +53,7 @@ t = [kron(ones(1,N_train),t1), kron(ones(1,N_train),t2), kron(ones(1,N_train),t3
 W = eye(C,D+1);
 cond = 1;
 iters = 0;
+disp('---- Begin training full feature set ----');
 tic;
 while cond
     grad_W_MSE = 0;
@@ -71,6 +72,8 @@ while cond
     W = W - alpha*grad_W_MSE;
 end
 toc
+disp('---- End training full feature set ----');
+
 
 %% Test
 known_test = [kron(ones(1,N_test),t1), kron(ones(1,N_test),t2), kron(ones(1,N_test),t3)];
@@ -95,7 +98,7 @@ end
 figure(1);
 plotconfusion(known_test,pred_test,'Iris test set');
 titl = get(get(gca,'title'),'string');
-title({titl});%, sprintf('N\\_train = %G, N\\_test = %G, Iterations = %G', N_train, N_test, iters)});
+title({titl, '30 first training, 20 last testing'});
 xticklabels({'Setosa', 'Versicolour', 'Virginica'});
 yticklabels({'Setosa', 'Versicolour', 'Virginica'});
 
@@ -103,9 +106,8 @@ yticklabels({'Setosa', 'Versicolour', 'Virginica'});
 figure(2);
 plotconfusion(t,pred_train,'Iris training set');
 titl = get(get(gca,'title'),'string');
-title({titl});%, sprintf('N\\_train = %G, N\\_test = %G, Iterations = %G', N_train, N_test, iters)});
+title({titl, '30 first training, 20 last testing'});
 xticklabels({'Setosa', 'Versicolour', 'Virginica'});
 yticklabels({'Setosa', 'Versicolour', 'Virginica'});
-
 
 
