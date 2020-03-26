@@ -10,13 +10,20 @@ end
 M = 64;
 clusters = cell(10,1);
 
+disp('---- Begin clustering ----');
 tic;
-for n = 0:9
-    i = n+1;
+for i = 1:10
     vi = trainvecs{i};
     [~,Ci] = kmeans(vi,M);
     clusters{i} = Ci;
 end
 toc
+disp('---- End clustering ----');
 
 
+%% Clustered training set
+trainv_clustered   = cell2mat(clusters);
+trainlab_clustered = NaN(10*M,1);
+for n = 0:9
+    trainlab_clustered(n*M+1:(n+1)*M) = n * ones(M,1);
+end
