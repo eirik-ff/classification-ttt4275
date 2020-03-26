@@ -10,7 +10,7 @@ guess = zeros(10,N_test);
 tic;
 for i = 1:N_test
     test = testv(i,:);
-    dists = dist(train,test');
+    dists = dist(trainv,test');
     [d,di] = min(dists);
     pred = trainlab(di);
     guess(pred+1,i) = 1;
