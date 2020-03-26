@@ -67,7 +67,7 @@ while cond
     cond = norm(grad_W_MSE) >= tol;
     iters = iters + 1;
 
-    alpha = 0.0001;
+    alpha = 0.001;
     W = W - alpha*grad_W_MSE;
 end
 toc
@@ -77,7 +77,7 @@ known_test = [kron(ones(1,N_test),t1), kron(ones(1,N_test),t2), kron(ones(1,N_te
 pred_test  = zeros(size(known_test));
 for i = 1:length(xt)
     x = [xt(i,:)'; 1];
-    g = W*x;
+    g = sigmoid(W*x);
     [w,j] = max(g);
     pred_test(j,i) = 1;
 end
@@ -85,7 +85,7 @@ end
 pred_train = zeros(size(t));
 for i = 1:length(xd)
     x = [xd(i,:)'; 1];
-    g = W*x;
+    g = sigmoid(W*x);
     [w,j] = max(g);
     pred_train(j,i) = 1;
 end
@@ -95,7 +95,7 @@ end
 figure(1);
 plotconfusion(known_test,pred_test,'Iris test set');
 titl = get(get(gca,'title'),'string');
-title({titl, sprintf('N\\_train = %G, N\\_test = %G, Iterations = %G', N_train, N_test, iters)});
+title({titl});%, sprintf('N\\_train = %G, N\\_test = %G, Iterations = %G', N_train, N_test, iters)});
 xticklabels({'Setosa', 'Versicolour', 'Virginica'});
 yticklabels({'Setosa', 'Versicolour', 'Virginica'});
 
@@ -103,7 +103,7 @@ yticklabels({'Setosa', 'Versicolour', 'Virginica'});
 figure(2);
 plotconfusion(t,pred_train,'Iris training set');
 titl = get(get(gca,'title'),'string');
-title({titl, sprintf('N\\_train = %G, N\\_test = %G, Iterations = %G', N_train, N_test, iters)});
+title({titl});%, sprintf('N\\_train = %G, N\\_test = %G, Iterations = %G', N_train, N_test, iters)});
 xticklabels({'Setosa', 'Versicolour', 'Virginica'});
 yticklabels({'Setosa', 'Versicolour', 'Virginica'});
 
