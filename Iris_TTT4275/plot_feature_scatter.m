@@ -37,8 +37,8 @@ for i = 1:N_plots
     
     legend off;
 end
-subplot(N_plots_y, N_plots_x, 1);
-legend(classes,'location','northwest');
+subplot(N_plots_y, N_plots_x, N_plots_x*N_plots_y);
+legend(classes,'location','northwest', 'location','southeast');
 
 
 
