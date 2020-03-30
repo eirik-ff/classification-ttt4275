@@ -6,7 +6,7 @@ class3 = load('class_3');  % Virginica
 all_data = [class1; class2; class3];
 
 %% Definitions
-features = [1;2;3;4];
+features = [1,2,3,4];
 
 C = 3; % number of classes
 D = length(features); % number of features
@@ -101,7 +101,8 @@ end
 figure(1);
 plotconfusion(known_test,pred_test,'Iris test set');
 titl = get(get(gca,'title'),'string');
-title({titl, sprintf('N\\_train = %G, N\\_test = %G, Iterations = %G', N_train, N_test, iters)});
+fstr = sprintf(', %d', features);
+title({titl, sprintf('Features: %s', fstr(2:end))});
 xticklabels({'Setosa', 'Versicolour', 'Virginica'});
 yticklabels({'Setosa', 'Versicolour', 'Virginica'});
 
@@ -109,7 +110,8 @@ yticklabels({'Setosa', 'Versicolour', 'Virginica'});
 figure(2);
 plotconfusion(t,pred_train,'Iris training set');
 titl = get(get(gca,'title'),'string');
-title({titl, sprintf('N\\_train = %G, N\\_test = %G, Iterations = %G', N_train, N_test, iters)});
+fstr = sprintf(', %d', features);
+title({titl, sprintf('Features: %s', fstr(2:end))});
 xticklabels({'Setosa', 'Versicolour', 'Virginica'});
 yticklabels({'Setosa', 'Versicolour', 'Virginica'});
 
