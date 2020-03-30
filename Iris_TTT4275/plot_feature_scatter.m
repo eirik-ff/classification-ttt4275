@@ -22,6 +22,8 @@ N_plots_x = 3;
 N_plots_y = N_plots / N_plots_x;
 
 figure(1);
+sgtitle('Iris features plotted against each other');
+
 g = [kron(ones(samples,1),1);
      kron(ones(samples,1),2);
      kron(ones(samples,1),3);];

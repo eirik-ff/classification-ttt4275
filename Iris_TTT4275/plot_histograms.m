@@ -20,10 +20,9 @@ pw_bins = bins;
 %% Plot histogram sepal length
 figure(1);
 clf;
+sgtitle('Comparison of features across classes');
 
 subplot(411);
-title('Comparison of features across classes');
-
 hold on;
 histogram(class2(:,1), sl_bins);
 histogram(class1(:,1), sl_bins);
