@@ -23,9 +23,9 @@ N_test  = 20;
 idx_train = 1:N_train;
 idx_test  = N_train+1:N_obsv;
 
-% % 20 first test, 30 last train
-% idx_test  = 1:N_test;
-% idx_train = N_test+1:N_obsv;
+% 20 first test, 30 last train
+idx_test  = 1:N_test;
+idx_train = N_test+1:N_obsv;
 
 
 %% Training data (d = data)
@@ -99,6 +99,7 @@ figure(1);
 plotconfusion(known_test,pred_test,'Iris test set');
 titl = get(get(gca,'title'),'string');
 title({titl, '30 first training, 20 last testing'});
+title({titl, '30 last training, 20 first testing'});
 xticklabels({'Setosa', 'Versicolour', 'Virginica'});
 yticklabels({'Setosa', 'Versicolour', 'Virginica'});
 
@@ -107,6 +108,7 @@ figure(2);
 plotconfusion(t,pred_train,'Iris training set');
 titl = get(get(gca,'title'),'string');
 title({titl, '30 first training, 20 last testing'});
+title({titl, '30 last training, 20 first testing'});
 xticklabels({'Setosa', 'Versicolour', 'Virginica'});
 yticklabels({'Setosa', 'Versicolour', 'Virginica'});
 
