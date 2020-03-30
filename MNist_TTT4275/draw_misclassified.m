@@ -16,6 +16,7 @@ end
 figure(1);
 clf;
 sgtitle('Some misclassified images');
+% sgtitle('Some correctly classified images');
 
 for i = 1:10
     subplot(2,5,i);
