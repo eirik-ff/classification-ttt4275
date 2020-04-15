@@ -1,9 +1,6 @@
 %% Definitions
 N_test     = size(testv,1);
 N_train    = size(trainv,1);
-chunk_size = 1000;
-N_chunks   = N_train / chunk_size;
-
 
 %% Classify
 guess = zeros(10,N_test);
