@@ -1,0 +1,16 @@
+>> task1
+---- Begin 1-NN classify ----
+Elapsed time is 1778.813528 seconds.
+---- End 1-NN classify ----
+>> task2_cluster
+---- Begin clustering ----
+Elapsed time is 44.879525 seconds.
+---- End clustering ----
+>> task2_1nn
+---- Begin 1-NN clustered classify ----
+Elapsed time is 19.658359 seconds.
+---- End 1-NN clustered classify ----
+>> task2_knn
+---- Begin kNN clustered classify ----
+Elapsed time is 20.228380 seconds.
+---- End kNN clustered classify ----
