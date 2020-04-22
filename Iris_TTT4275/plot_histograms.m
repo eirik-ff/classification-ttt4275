@@ -24,8 +24,8 @@ sgtitle('Comparison of features across classes');
 
 subplot(411);
 hold on;
-histogram(class2(:,1), sl_bins);
 histogram(class1(:,1), sl_bins);
+histogram(class2(:,1), sl_bins);
 histogram(class3(:,1), sl_bins);
 
 xlabel('Sepal length [cm]');
@@ -34,8 +34,8 @@ ylabel('Count');
 
 subplot(412);
 hold on;
-histogram(class2(:,2), sw_bins);
 histogram(class1(:,2), sw_bins);
+histogram(class2(:,2), sw_bins);
 histogram(class3(:,2), sw_bins);
 
 xlabel('Sepal width [cm]');
@@ -44,8 +44,8 @@ ylabel('Count');
 
 subplot(413);
 hold on;
-histogram(class2(:,3), pl_bins);
 histogram(class1(:,3), pl_bins);
+histogram(class2(:,3), pl_bins);
 histogram(class3(:,3), pl_bins);
 
 xlabel('Petal length [cm]');
@@ -54,8 +54,8 @@ ylabel('Count');
 
 subplot(414);
 hold on;
-histogram(class2(:,4), pw_bins);
 histogram(class1(:,4), pw_bins);
+histogram(class2(:,4), pw_bins);
 histogram(class3(:,4), pw_bins);
 
 xlabel('Petal width [cm]');
